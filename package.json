@@ -3,25 +3,32 @@
     "description": "A mini nwjs app",
     "main": "index.html",
     "scripts": {
-        "start": "nw ."
+        "start": "nw .",
+		"png2icons": "electron-icon-builder -f --input=ms-icon-310x310.png --output=. ",
+		"build": "nwb nwbuild -v 0.37.2-sdk --win-ico icons/icon.ico --mac-icns icons/icon.icns --side-by-side ./dist/"
     },
     "window": {
-	"title": "myapp",
+        "title": "myapp",
         "frame": true,
         "toolbar": false,
-	"width": 1024,
-	"height": 800,
+        "width": 1024,
+        "height": 800,
+		"min_width": 800,
+		"min_height": 600,
+		"resizable": true,
+		"as_desktop": true,
+		"position": "center",
         "icon": "ms-icon-310x310.png"
     },
     "platformOverrides": {
         "win": {
             "window": {
-                "frame": true
+                "frame": false
             }
         }
     },
     "devDependencies": {
-	"electron-icon-builder": "^1.0.0",
+        "electron-icon-builder": "^1.0.0",
         "nwjs-builder": "^1.14.0"
     },
     "dependencies": {
