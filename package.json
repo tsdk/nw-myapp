@@ -1,0 +1,50 @@
+{
+    "name": "nw-myapp",
+    "description": "A mini nwjs app",
+    "main": "index.html",
+    "scripts": {
+        "start": "nw ."
+    },
+    "window": {
+	"title": "myapp",
+        "frame": true,
+        "toolbar": false,
+	"width": 1024,
+	"height": 800,
+        "icon": "ms-icon-310x310.png"
+    },
+    "platformOverrides": {
+        "win": {
+            "window": {
+                "frame": true
+            }
+        }
+    },
+    "devDependencies": {
+	"electron-icon-builder": "^1.0.0",
+        "nwjs-builder": "^1.14.0"
+    },
+    "dependencies": {
+        "nw": "^0.37.2-sdk"
+    },
+    "license": "MIT",
+    "nwjsBuilder": {
+        "//1": "Optionally overwrite `name`, `version` and `description`",
+        "productName": "",
+        "productVersion": "",
+        "fileDescription": "",
+        "//2": "Other options",
+        "//3": "For Windows",
+        "copyright": "",
+        "internalName": "",
+        "fileVersion": "",
+        "comments": "",
+        "companyName": "",
+        "legalTrademarks": "",
+        "originalFilename": "",
+        "privateBuild": "",
+        "specialBuild": "",
+        "//4": "For Mac OS X",
+        "bundleIdentifier": ""
+    }
+}
