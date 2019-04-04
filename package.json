@@ -1,11 +1,14 @@
 {
     "name": "nw-myapp",
+    "version": "1.0.0",
     "description": "A mini nwjs app",
     "main": "index.html",
     "scripts": {
         "start": "nw .",
-		"png2icons": "electron-icon-builder -f --input=ms-icon-310x310.png --output=. ",
-		"build": "nwb nwbuild -v 0.37.2-sdk --win-ico icons/icon.ico --mac-icns icons/icon.icns --side-by-side ./dist/"
+        "png2icons": "electron-icon-builder -f --input=ms-icon-310x310.png --output=. ",
+        "build": "build -w --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ .",
+        "dist": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://npm.taobao.org/mirrors/nwjs/ --concurrent .",
+        "run": "run --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ ."
     },
     "window": {
         "title": "myapp",
@@ -13,11 +16,11 @@
         "toolbar": false,
         "width": 1024,
         "height": 800,
-		"min_width": 800,
-		"min_height": 600,
-		"resizable": true,
-		"as_desktop": true,
-		"position": "center",
+        "min_width": 800,
+        "min_height": 600,
+        "resizable": true,
+        "as_desktop": true,
+        "position": "center",
         "icon": "ms-icon-310x310.png"
     },
     "platformOverrides": {
@@ -29,29 +32,29 @@
     },
     "devDependencies": {
         "electron-icon-builder": "^1.0.0",
-        "nwjs-builder": "^1.14.0"
+        "nwjs-builder-phoenix": "^1.15.0"
     },
     "dependencies": {
         "nw": "^0.37.2-sdk"
     },
     "license": "MIT",
-    "nwjsBuilder": {
-        "//1": "Optionally overwrite `name`, `version` and `description`",
-        "productName": "",
-        "productVersion": "",
-        "fileDescription": "",
-        "//2": "Other options",
-        "//3": "For Windows",
-        "copyright": "",
-        "internalName": "",
-        "fileVersion": "",
-        "comments": "",
-        "companyName": "",
-        "legalTrademarks": "",
-        "originalFilename": "",
-        "privateBuild": "",
-        "specialBuild": "",
-        "//4": "For Mac OS X",
-        "bundleIdentifier": ""
+    "build": {
+        "nwVersion": "0.37.2",
+        "excludes": [
+            "^icons",
+            "^node_modules"
+        ],
+        "ffmpegIntegration": false,
+        "win": {
+            "productName": "MyApp",
+            "companyName": "Allput Inc.",
+            "copyright": "Copyright © 2019",
+            "icon": "./icons/icon.ico"
+        },
+        "mac": {
+            "displayName": "MyApp",
+            "copyright": "Copyright © 2019",
+            "icon": "./icons/icon.icns"
+        }
     }
 }
