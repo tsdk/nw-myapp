@@ -6,7 +6,8 @@
     "scripts": {
         "start": "nw .",
         "png2icons": "electron-icon-builder -f --input=ms-icon-310x310.png --output=. ",
-        "build": "build -w --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ .",
+        "build:mac": "build -m --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ .",
+        "build:win": "build -w --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ .",
         "dist": "build --tasks win-x86,win-x64,linux-x86,linux-x64,mac-x64 --mirror https://npm.taobao.org/mirrors/nwjs/ --concurrent .",
         "run": "run --x64 --mirror https://npm.taobao.org/mirrors/nwjs/ ."
     },
